@@ -2,7 +2,8 @@
 {% load static %}
 {% load bootstrap_tags %}
 {% block content %}
-<script type="text/javascript">
+
+    <script type="text/javascript">
     $(document).ready(function() {
         $('#calendar').fullCalendar({
             //googleCalendarApiKey: 'AIzaSyDs8ldPAzJ8XwHlCoIiITVvb-J3dIZKmUY',
@@ -25,7 +26,7 @@
         });
 
     });
-</script>
+    </script>
 <div class="jumbotron hero7  container">
  <h1 class="heroh1">Apartment Brisas</h1>
  <h2 class="heroh2">Availability and Booking {{title}}</h2>
@@ -66,6 +67,9 @@
                 {{ form | as_bootstrap }}
                 <input type="submit" class="btn btn-primary" value="submit enquiry">
                 </form>
+                {% if datesNoAvailable %}
+                    {{ datesNoAvailable }}
+                {% endif %}
             </div>
         </div>
     </div>

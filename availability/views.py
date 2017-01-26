@@ -15,6 +15,7 @@ def get_index(request):
     #print dataitems
     #print dataitems2
     dateArr = []
+    dateArr4 = []
     for itemss in dataitems:
         itemend = itemss['end']['date']
         itemstart = itemss['start']['date']
@@ -77,6 +78,6 @@ def get_index(request):
     else:
         form = bookingForm()
 
-    args = {'form': form}
+    args = {'form': form, 'datesNoAvailable': dateArr4}
     return render(request, 'availability.html', args)
 
